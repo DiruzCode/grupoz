@@ -49,3 +49,34 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+
+var inject = require('gulp-inject');
+var bowerFiles = require('main-bower-files');
+gulp.task('inject', function() {
+
+    gulp.src('./www/index.html')
+        .pipe(inject(gulp.src(bowerFiles({
+            paths: {
+                bowerrc: '.bowerrc'
+            }
+        }), {
+            read: false
+        }), {
+            name: 'bower',
+            addRootSlash: false,
+            ignorePath: 'www'
+        }))
+        .pipe(inject(gulp.src([
+            './www/bundles/**/*.css',
+            './www/bundles/**/*.js',
+            './www/views/**/*.css',
+            './www/views/**/*.js'
+        ], {
+            read: false
+        }), {
+            addRootSlash: false,
+            ignorePath: 'www'
+        }))
+        .pipe(gulp.dest('./www'));
+
+});
