@@ -1,87 +1,12 @@
-<ion-view class="home" title="Inicio">
-<flex-loading legend="{{legend}}" ng-if="!dashboard" title="{{title}}"></flex-loading>
-<div ng-if="dashboard">
+<div class="list">
 
-      <ion-header-bar class="bar" style="background-color: #D32F2F;">
-        <h1 class="title" style="text-align: center;">CONTRATOS ASOCIADOS</h1>
-        <!--<button class="button button-icon"  ui-sref="logout()">Salir</button>-->
-      </ion-header-bar>
-
-      <ion-content>
-          <div class="card">
-              <div class="item item-divider" style="background-color: #D32F2F;">
-                <center style="color: #FFFFFF;">
-                    Filtrar Por
-                </center>
-              </div>
-              <div class="list">
-
-              <div class="item item-input-inset">
-                <label class="item-input-wrapper">
-                    <i class="icon ion-ios-search placeholder-icon"></i>
-                    <input type="text" placeholder="Productor" ng-model="home.farmer" ng-change="actionFind(home.farmer, 'farmer')">
-                </label>&nbsp;
-                <label class="item-input-wrapper">
-                    <i class="icon ion-ios-search placeholder-icon"></i>
-                    <input type="text" placeholder="Contrato" ng-model="home.contract" ng-change="actionFind(home.contract, 'contract')">
-                </label>&nbsp;
-                <label class="item-input-wrapper">
-                    <i class="icon ion-ios-search placeholder-icon"></i>
-                    <input type="text" placeholder="hectareas" ng-model="home.hectarea" ng-change="actionFind(home.hectarea, 'surface')">
-                </label>&nbsp;
-                <label class="item-input-wrapper">
-                    <i class="icon ion-ios-search placeholder-icon"></i>
-                    <input type="text" placeholder="Predio" ng-model="home.predio" ng-change="actionFind(home.predio, 'land')">
-                </label>
-              </div>
-
-            </div>
-        </div>
-        <div class="card">
-            <ion-list>
-                <div class="row">
-                    <div class="col col-25">
-                        <div class="col-demo-header" ng-click="sortBy('farmer_name')">Productor</div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="col-demo-header" ng-click="sortBy('sap_number')">Contrato</div>
-                    </div>
-                    <div class="col col-10">
-                        <div class="col-demo-header" ng-click="sortBy('hectares')">Hectáreas</div>
-                    </div>
-                    <div class="col col-25">
-                        <div class="col-demo-header" ng-click="sortBy('land_name')">Predio</div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="col-demo-header" ng-click="sortBy('dias_sin_visitar')">Dias sin visitar</div>
-                    </div>
-                </div>
-            </ion-list>
-        </div>
-        <div class="card">
-            <ion-scroll style="height:25em">
-                <div show-pager="true" class="has-header">
-                    <div class="row" ng-repeat="item in contract | orderBy:propertyName:reverse"  ui-sref="app.contract_visit({id : item.contract_id})">
-                        <div class="col col-25">
-                            <div class="col-demo">{{item.farmer_name}}</div>
-                        </div>
-                        <div class="col col-20">
-                            <div class="col-demo">{{item.sap_number}}</div>
-                        </div>
-                        <div class="col col-10">
-                            <div class="col-demo">{{item.hectares}}</div>
-                        </div>
-                        <div class="col col-25">
-                            <div class="col-demo">{{item.land_name}}</div>
-                        </div>
-                        <div class="col col-20">
-                            <div class="col-demo" ng-if="item.dias_sin_visitar !== 'AUN SIN VISITAR'">{{item.dias_sin_visitar | number:0}}</div>
-                            <div class="col-demo" ng-if="item.dias_sin_visitar == 'AUN SIN VISITAR'">{{item.dias_sin_visitar}}</div>
-                        </div>
-                    </div>
-                </div>
-            </ion-scroll>
-        </div>
-      </ion-content>
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Email">
+    </label>
+    <button class="button button-small">
+      Submit
+    </button>
   </div>
-</ion-view>
+
+</div>
