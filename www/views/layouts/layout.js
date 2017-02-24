@@ -1,4 +1,4 @@
-app.controller('DefaultLayoutController', [
+app.controller('layout', [
   '$scope',
   '$state',
   function($scope, $state) {
@@ -10,13 +10,13 @@ app.controller('DefaultLayoutController', [
         label: "Inicio",
         active: true
       }, {
-        route: "login",
+        route: "app.userList",
         icon: "ion-chevron-right",
-        label: "Login"
+        label: "Listar Usuario"
       }, {
-        route: "logout",
+        route: "app.userCreate",
         icon: "ion-chevron-right",
-        label: "LogOut"
+        label: "Crear nuevo usuario"
       }]
     };
 

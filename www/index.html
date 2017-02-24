@@ -23,23 +23,30 @@
 	<!-- endinject -->
 
     <!-- your app's js -->
+    <script src="config/Config.js"></script>
     <script src="app.js"></script>
     <script src="bundles/js/run.js"></script>
     <script src="bundles/js/route.js"></script>
+    <script src="bundles/js/route-dinamic.js"></script>
     <!-- directive inject -->
 
     <!-- service inject -->
-	<script src="config/Config.js"></script>
+    <script src="bundles/js/service/Camera.js"></script>
+    <script src="bundles/js/service/Geo.js"></script>
     <script src="bundles/js/service/apiService.js"></script>
 	<!-- endinject -->
 
 
     <!-- controller inject -->
-    <script src="views/layouts/layoutController.js"></script>
-    <script src="views/login/loginController.js"></script>
-    <script src="views/login/logoutController.js"></script>
-    <script src="views/home/homeController.js"></script>
+    <script src="views/layouts/layout.js"></script>
+    <script src="views/home/home.js"></script>
     <!-- endinject -->
+
+
+    <script src="views/user/create.js"></script>
+    <script src="views/user/get.js"></script>
+    <script src="views/user/list.js"></script>
+    <script src="views/user/update.js"></script>
 
   </head>
   <body ng-app="App">
