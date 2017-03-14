@@ -9,4 +9,16 @@
     </button>
   </div>
 
+
+  <ul class="list">
+      <li ng-repeat="item in userList" class="item">
+            {{item.full_name}}
+            <a ui-sref="app.user({id: item.user_id})" class="button button-positive">
+              <i class="icon ion-ios-telephone"></i>
+            </a>
+            <a ui-sref="app.userUpdate({id: item.user_id})" class="button button-positive">
+              <i class="icon ion-star"></i>
+            </a>
+        </li>
+    </ul>
 </div>

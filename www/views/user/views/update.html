@@ -1,12 +1,34 @@
 <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Primer nombre</span>
+    <input ng-model="model.first_name" type="text" placeholder="John">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Segundo Nombre</span>
+    <input ng-model="model.last_name" type="text" placeholder="Suhr">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Rut</span>
+    <input ng-model="model.rut" type="text" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Password</span>
+    <input ng-model="model.password" type="password" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Cargo</span>
+    <input ng-model="model.position" type="text" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">business_name</span>
+    <input ng-model="model.business_name" type="text" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">email</span>
+    <input ng-model="model.email" type="text" placeholder="john@suhr.com">
+  </label>
 
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Email">
-    </label>
-    <button class="button button-small">
-      Submit
+  <button ng-click="actionCreate()" class="button button-full button-positive">
+      Full Width Block Button
     </button>
-  </div>
-
 </div>

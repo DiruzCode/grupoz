@@ -1,12 +1,52 @@
 <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Primer nombre</span>
+    <input ng-model="model.first_name" type="text" placeholder="John">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Segundo Nombre</span>
+    <input ng-model="model.last_name" type="text" placeholder="Suhr">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Rut</span>
+    <input ng-model="model.rut" type="text" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Password</span>
+    <input ng-model="model.password" type="password" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Cargo</span>
+    <input ng-model="model.position" type="text" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">business_name</span>
+    <input ng-model="model.business_name" type="text" placeholder="john@suhr.com">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">email</span>
+    <input ng-model="model.email" type="text" placeholder="john@suhr.com">
+  </label>
 
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Email">
-    </label>
-    <button class="button button-small">
-      Submita
+  <button ng-click="actionCreate()" class="button button-full button-positive">
+      Full Width Block Button
     </button>
-  </div>
 
+    <div style="width: 86%; margin-left: 7%;" class="row list card" ng-repeat="image in images">
+        <button class="button button-clear button-assertive fixed-outside" ng-click="removeImage($index)">
+          <i class="icon ion-close-circled"></i>
+        </button>
+      <div class="images-content-col">
+        <img ng-if="image.image.length < 300" style="height: auto; width: 86%; margin-top: 5%; margin-left: 7%; margin-right: 6%;" ng-src="{{image.image}}"/>
+        <img ng-if="image.image.length > 300" style="height: auto; width: 86%; margin-top: 5%; margin-left: 7%; margin-right: 6%;" ng-src="{{'data:image/png;base64,'+image.image}}"/>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col col-50">
+          <button class="button button-full button-royal" ng-click="takePicture()">
+            <i class="icon ion-ios-camera-outline"></i>
+          </button>
+      </div>
+    </div>
 </div>

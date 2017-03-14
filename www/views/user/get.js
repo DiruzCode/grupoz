@@ -1,11 +1,12 @@
 app.controller('user', [
-  '$scope','$Api',
-  function($scope, $Api) {
-
+  '$scope','$Api', '$stateParams',
+  function($scope, $Api, $stateParams) {
+        $scope.user = [];
         var init = function(){
-            /*$Api.GET('user').then(function(result) {
-
-            })*/
+            $Api.GET('user/'+$stateParams.id).then(function(result) {
+                $scope.user = result.data[0];
+                console.log(result);
+            })
         }
 
         init();

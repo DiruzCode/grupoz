@@ -2,6 +2,7 @@ angular.module('App')
 .config(function($stateProvider, $urlRouterProvider, config) {
 
     $urlRouterProvider.when('', 'app/home');
+
     angular.forEach(config.module, function(provider) {
         $stateProvider
             .state('app.'+provider+'List', {
